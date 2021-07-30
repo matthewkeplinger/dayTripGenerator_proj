@@ -19,6 +19,7 @@ let ranTrans = confirmItem(transArray);
 let ranFun = confirmItem(funArray);
 let myTrip = confirmChoice();
 
+
 //DECLARE FUNCTIONS
 //Choose random index from array
 function randomItem(randomArray) {
@@ -29,14 +30,18 @@ function randomItem(randomArray) {
 //Confirm that the user wants the random item 
 function confirmItem(randomArray) {
     let makeChoice = randomItem(randomArray);
+    let newChoice = randomItem(randomArray);
     let confirmChoice = prompt(`Are you happy with ${makeChoice}? `);
     if (confirmChoice === 'yes' || confirmChoice === 'y') {
         console.log(`Item confirmed: ${makeChoice}`);
+       return makeChoice;
     }
-    else {
-        confirmItem(randomArray);
+    else if (confirmChoice === 'no' || confirmChoice === 'n'){
+        newChoice;
+        prompt(`Are you happy with ${newChoice}`);
+        console.log(`Item confirmed: ${newChoice}`);
+        return newChoice;
     }
-    return makeChoice;
 }
 
 //If user wants to make changes to the trip, allow for changes
