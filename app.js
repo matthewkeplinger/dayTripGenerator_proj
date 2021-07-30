@@ -31,14 +31,14 @@ function randomItem(randomArray) {
 function confirmItem(randomArray) {
     let makeChoice = randomItem(randomArray);
     let newChoice = randomItem(randomArray);
-    let confirmChoice = prompt(`Are you happy with ${makeChoice}? `);
+    let confirmChoice = prompt(`Are you happy with ${makeChoice}?\nType 'yes' or 'y' to confirm.`);
     if (confirmChoice === 'yes' || confirmChoice === 'y') {
         console.log(`Item confirmed: ${makeChoice}`);
        return makeChoice;
     }
-    else if (confirmChoice === 'no' || confirmChoice === 'n'){
+    else{
         newChoice;
-        prompt(`Are you happy with ${newChoice}`);
+        prompt(`Are you happy with ${newChoice}\nType 'yes' or 'y' to confirm.`);
         console.log(`Item confirmed: ${newChoice}`);
         return newChoice;
     }
@@ -46,7 +46,7 @@ function confirmItem(randomArray) {
 
 //If user wants to make changes to the trip, allow for changes
 function makeNewChoice() {
-    let tryAgain = prompt(`Do you wish to make changes to your trip?`);
+    let tryAgain = prompt(`Do you wish to make changes to your trip?\nType 'yes' or 'y' to make changes.`);
     if (tryAgain === 'yes' || tryAgain === 'y') {
         let userInput = prompt('Enter one of the following options (digit only):\n 1-Destination\n 2-Food\n 3-Transportation\n 4-Entertainment');
         switch (userInput) {
@@ -72,7 +72,7 @@ function makeNewChoice() {
 
 //Confirm user's final choices
 function confirmChoice() {
-    let confirmDecision = prompt('Do you wish to confirm the trip details?');
+    let confirmDecision = prompt(`Do you wish to confirm the trip details?\nType 'yes' or 'y' to confirm.`);
     if (confirmDecision === 'no' || confirmDecision === 'n') {
         makeNewChoice();
         confirmChoice();
